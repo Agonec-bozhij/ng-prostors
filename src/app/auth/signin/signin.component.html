@@ -1,0 +1,27 @@
+<div class="modal-backing"></div>
+
+<div class="modal" @authZoomState>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="modal-content">
+
+            <div class="modal-content--head">Форма авторизации</div>
+
+            <div class="modal-content--body">
+                <div class="form-control">
+                    <label for="login">Логин</label>
+                    <input type="text" name="username" id="login" formControlName="username">
+                </div>
+                <div class="form-control">
+                    <label for="password">Пароль</label>
+                    <input type="password" name="password" id="password" formControlName="password">
+                </div>
+
+            </div>
+
+            <div class="modal-content--footer">
+                <button type="submit">Авторизоваться</button>
+            </div>
+
+        </div>
+    </form>
+</div>

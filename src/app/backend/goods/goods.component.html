@@ -1,0 +1,35 @@
+<div class="content">
+    <md-card>Товары</md-card>
+    <md-card>
+        <div class="table">
+            <div class="table-row table-heading">
+                <div class="table-heading-th"><span>ID</span></div>
+                <div class="table-heading-th"><span>Категория</span></div>
+                <div class="table-heading-th"><span>Название</span></div>
+                <div class="table-heading-th"><span>Адрес</span></div>
+                <div class="table-heading-th"><span>Площадь участка</span></div>
+                <div class="table-heading-th"><span>Площадь дома</span></div>
+                <div class="table-heading-th"><span>Площадь квартиры</span></div>
+                <div class="table-heading-th"><span>Описание объекта</span></div>
+                <div class="table-heading-th"><span>Цена</span></div>
+                <div class="table-heading-th"><span>Кто ведет</span></div>
+                <div class="table-heading-th"><span>Редактирование</span></div>
+            </div>
+            <div *ngFor="let good of goods | async" class="table-row table-body">
+                <div class="table-body-td"><span>1</span></div>
+                <div class="table-body-td"><span>2</span></div>
+                <div class="table-body-td"><span>{{ good.good_title }}</span></div>
+                <div class="table-body-td"><span>3</span></div>
+                <div class="table-body-td"><span>3</span></div>
+                <div class="table-body-td"><span>3</span></div>
+                <div class="table-body-td"><span>3</span></div>
+                <div class="table-body-td"><span>3</span></div>
+                <div class="table-body-td"><span>3</span></div>
+                <div class="table-body-td"><span>3</span></div>
+                <div class="table-body-td"><span>3</span></div>
+            </div>
+        </div>
+    </md-card>
+
+</div>
+
