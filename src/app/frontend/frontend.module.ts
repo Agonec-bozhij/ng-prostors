@@ -3,10 +3,12 @@ import {NgModule} from '@angular/core';
 import {HeaderComponent} from './header/header.component';
 import { FrontendComponent } from './frontend.component';
 import {AppRoutingModule} from '../app-routing.module';
+import {ChartModule} from "angular2-highcharts";
 
 @NgModule({
     imports: [
-        AppRoutingModule
+        AppRoutingModule,
+        ChartModule
     ],
     exports: [
         AppRoutingModule,

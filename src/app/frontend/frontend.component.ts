@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 
 @Component({
   selector: 'app-frontend',
@@ -7,7 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FrontendComponent implements OnInit {
 
-  constructor() { }
+    options: Object;
+
+    constructor() {
+        this.options = {
+            title : { text : 'simple chart' },
+            series: [{
+                data: [29.9, 71.5, 106.4, 129.2],
+            }]
+        };
+    }
 
   ngOnInit() {
   }

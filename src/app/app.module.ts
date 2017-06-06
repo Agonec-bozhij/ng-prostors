@@ -11,6 +11,13 @@ import {AuthModule} from './auth/auth.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AuthService} from './auth/auth.service';
 import {AuthGuard} from './auth/auth-guard.service';
+import {ChartModule} from "angular2-highcharts";
+import { HighchartsStatic } from 'angular2-highcharts/dist/HighchartsService';
+import * as highcharts from 'highcharts';
+
+export function highchartsFactory() {
+    return highcharts;
+}
 
 @NgModule({
     declarations: [
@@ -24,9 +31,15 @@ import {AuthGuard} from './auth/auth-guard.service';
         AppRoutingModule,
         AuthModule,
         FrontendModule,
-        BackendModule
+        BackendModule,
+        ChartModule
     ],
-    providers: [AuthService, AuthGuard],
+    exports: [
+    ],
+    providers: [AuthService, AuthGuard, {
+        provide: HighchartsStatic,
+        useFactory: highchartsFactory
+    }],
     bootstrap: [AppComponent]
 })
 export class AppModule {

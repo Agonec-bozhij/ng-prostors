@@ -13,20 +13,19 @@ export class AuthGuard implements CanActivate {
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
 
-        return true;
-        // return this.authService.isAuthenticated().map(
-        //     (auth) => {
-        //         console.log('Мы прошли аутентификацию.');
-        //         return true;
-        //     },
-        //     (error) => {
-        //         console.log('Не прошли');
-        //         this.router.navigate(['signin']);
-        //         return false;
-        //     }
-        // ).catch((error) => {
-        //     this.router.navigate(['/signin']);
-        //     return Observable.throw(error);
-        // });
+        return this.authService.isAuthenticated().map(
+            (auth) => {
+                console.log('Мы прошли аутентификацию.');
+                return true;
+            },
+            (error) => {
+                console.log('Не прошли');
+                this.router.navigate(['signin']);
+                return false;
+            }
+        ).catch((error) => {
+            this.router.navigate(['/signin']);
+            return Observable.throw(error);
+        });
     }
 }
