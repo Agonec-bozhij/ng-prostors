@@ -1,3 +1,5 @@
 <div class="content">
     Categories
+
+    <chart type="StockChart" [options]="options" (load)="saveInstance($event.context)"></chart>
 </div>

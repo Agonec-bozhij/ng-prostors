@@ -10,13 +10,28 @@ import { GoodsComponent } from './goods/goods.component';
 import { CategoriesComponent } from './categories/categories.component';
 import {MdButtonModule, MdCardModule} from '@angular/material';
 import {GoodsService} from './services/goods-service.service';
+import * as highcharts from 'highcharts';
+import {ChartModule} from 'angular2-highcharts';
+import { HighchartsStatic } from 'angular2-highcharts/dist/HighchartsService';
+
+declare var require: any;
+
+export function highchartsFactory() {
+    const hc = require('highcharts/highstock');
+    const dd = require('highcharts/modules/exporting');
+    dd(hc);
+    return hc;
+}
+
+
 
 @NgModule({
     imports: [
         CommonModule,
         BackendRoutingModule,
         MdCardModule,
-        MdButtonModule
+        MdButtonModule,
+        ChartModule
     ],
     exports: [
         BackendRoutingModule
@@ -29,7 +44,11 @@ import {GoodsService} from './services/goods-service.service';
         CategoriesComponent
     ],
     providers: [
-        GoodsService
+        GoodsService,
+        {
+            provide: HighchartsStatic,
+            useFactory: highchartsFactory
+        }
     ],
 })
 export class BackendModule {

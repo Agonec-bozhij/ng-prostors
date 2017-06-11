@@ -8,9 +8,9 @@ import {AuthGuard} from "../auth/auth-guard.service";
 
 const backendRoutes: Routes = [
   {path: 'admin', component: BackendComponent, children: [
-      {path: '', component: HomeComponent, pathMatch: 'full', canActivate: [AuthGuard] },
-      {path: 'goods', component: GoodsComponent, canActivate: [AuthGuard]},
-      {path: 'categories', component: CategoriesComponent, canActivate: [AuthGuard]}
+      {path: '', component: HomeComponent, pathMatch: 'full'/*, canActivate: [AuthGuard]*/ },
+      {path: 'goods', component: GoodsComponent/*, canActivate: [AuthGuard]*/},
+      {path: 'categories', component: CategoriesComponent/*, canActivate: [AuthGuard]*/}
   ]},
 ];
 
