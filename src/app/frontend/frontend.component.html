@@ -1,7 +1,42 @@
 <app-header></app-header>
 
-<p>
-  frontend works!
-</p>
+<div class="filters-wrapper">
+    <div class="main-after-header">
+
+    </div>
+
+    <div class="filters-bar">
+        <div class="filter">
+            <div class="filter-value" appMainDropdown (clickOutside)="isOpen = true">{{current_type}}</div>
+            <div class="filter__dropdown">
+                <div *ngFor="let filter_type of settings.types.list" class="filter__type-dropdown-input">
+                    {{filter_type.value}}
+                </div>
+            </div>
+        </div>
+        <div class="filter">
+            <div class="filter-value" appMainDropdown (clickOutside)="isOpen = true">{{current_object}}</div>
+            <div class="filter__dropdown">
+                <div *ngFor="let filter_type of settings.objects.list" class="filter__type-dropdown-input">
+                    {{filter_type.value}}
+                </div>
+            </div></div>
+        <div class="filter">Комнат 2</div>
+        <div class="filter">Площадь от - до м2</div>
+        <div class="filter">Стоимость от - до Р</div>
+        <div class="filter">Расположение</div>
+    </div>
+
+    <div class="search-map">
+        <div class="search-map__show">
+            Показать на карте
+        </div>
+
+        <div class="search-map__find">
+            Найти
+        </div>
+    </div>
+</div>
+
 
 

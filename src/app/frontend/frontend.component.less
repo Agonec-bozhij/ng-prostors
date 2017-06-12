@@ -1,0 +1,67 @@
+.main-after-header {
+    background-image: url('/assets/images/header-bg.png');
+    background-size: cover;
+    height: 105px;
+    margin: 30px 0;
+}
+
+.filters-wrapper {
+
+    .filters-bar {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+
+        .filter {
+            width: 100%;
+            margin-right: 20px;
+            padding: 5px;
+            border: 2px solid red;
+            position: relative;
+
+            &__dropdown {
+                position: absolute;
+                top: 40px;
+                left: 0;
+                border: 1px solid #cacaca;
+                background: #fff;
+                width: 100%;
+                display: none;
+
+                &:before {
+                    content: '';
+                    width: 10px;
+                    height: 10px;
+                    border: 1px solid #cacaca;
+                    top: -4px;
+                    right: 10px;
+                    z-index: 111;
+                    display: block;
+                    position: absolute;
+                    transform: rotate(45deg);
+                    background: #fff;
+                    border-bottom: none;
+                    border-right: none;
+                }
+            }
+
+            .filter-value {
+
+                &.opened + .filter__dropdown {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .search-map {
+
+        &__show {
+
+        }
+
+        &__find {
+
+        }
+    }
+}

@@ -1,0 +1,42 @@
+header {
+    display: flex;
+    justify-content: space-between;
+
+    .logo {
+
+        img {
+
+        }
+    }
+
+    .header-nav {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding-left: 60px;
+        font-size: 16px;
+        font-weight: bold;
+        letter-spacing: 1px;
+
+        &__item {
+            width: 100%;
+            margin-right: 30px;
+
+            a {
+                display: block;
+                text-decoration: none;
+                height: 100%;
+                padding-top: 15px;
+                transition: 0.5s ease-out;
+                border-bottom: 2px solid transparent;
+
+                &:hover {
+                    border-bottom: 2px solid #B5D351;
+                    color: #B5D351;
+                }
+            }
+        }
+    }
+}
+
+

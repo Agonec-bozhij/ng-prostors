@@ -4,4 +4,11 @@
 
 * {
     box-sizing: border-box;
+    color: #00480F;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    width: 1200px;
+    margin: 0 auto;
 }

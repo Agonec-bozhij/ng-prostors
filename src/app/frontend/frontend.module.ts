@@ -3,12 +3,17 @@ import {NgModule} from '@angular/core';
 import {HeaderComponent} from './header/header.component';
 import { FrontendComponent } from './frontend.component';
 import {AppRoutingModule} from '../app-routing.module';
-import {ChartModule} from "angular2-highcharts";
+import {ChartModule} from 'angular2-highcharts';
+import {CommonModule} from '@angular/common';
+import { MainDropdownDirective } from './main-dropdown.directive';
+import {ClickOutsideModule} from 'ng-click-outside';
 
 @NgModule({
     imports: [
+        CommonModule,
         AppRoutingModule,
-        ChartModule
+        ChartModule,
+        ClickOutsideModule
     ],
     exports: [
         AppRoutingModule,
@@ -16,7 +21,8 @@ import {ChartModule} from "angular2-highcharts";
     ],
     declarations: [
         HeaderComponent,
-        FrontendComponent
+        FrontendComponent,
+        MainDropdownDirective
     ],
     providers: [],
 })
